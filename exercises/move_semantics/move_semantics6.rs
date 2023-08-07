@@ -13,7 +13,6 @@ fn main() {
     get_char(data.clone());
 
     string_uppercase(&data);
-    let a=*data.to_uppercase().to_string();
 }
 
 // Should not take ownership
@@ -23,7 +22,6 @@ fn get_char(data: String) -> char {
 
 // Should take ownership
 fn string_uppercase(mut data: &String) {
-    // FIXME怎么回事
-    data =&data.as_str().to_uppercase();
+    let data=&data.to_uppercase();
     println!("{}", data);
 }
