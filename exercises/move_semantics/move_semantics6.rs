@@ -23,7 +23,7 @@ fn get_char(data: String) -> char {
 
 // Should take ownership
 fn string_uppercase(mut data: &String) {
-    let a=*data.to_uppercase();
-    data = *data.to_uppercase();
+    // FIXME怎么回事
+    data =&data.as_str().to_uppercase();
     println!("{}", data);
 }
