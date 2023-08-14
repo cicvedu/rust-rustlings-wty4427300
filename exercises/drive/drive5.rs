@@ -5,18 +5,20 @@
 // You should not modify any existing code. All you need to do is add two line of attributes.
 
 
-// I AM NOT DONE
 
 
+//让别名函数，通过函数名链接到正确的函数
 extern {
     fn my_demo_function(a:u32) -> u32;
+    #[link_name = "my_demo_function"]
     fn my_demo_function_alias(a:u32) -> u32;
 }
 
 
 
-
+//编译器对函数名不修饰，或者说不修改
 mod Foo{
+    #[no_mangle]
     fn my_demo_function(a:u32) -> u32 {a}
 }
 

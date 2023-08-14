@@ -3,11 +3,13 @@
 // Execute `rustlings hint drive1` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
+//这个题是使用unsafe将类型转换回去，然后再赋值
 fn modify_by_address(address: usize) {
     // `address` is a memory address, there is an u32 at that address. try modify
     // the u32's value to 0xAABBCCDD
+    let p=unsafe{&mut *(address as *mut u32)};
+    *p=0xAABBCCDD
 }
 
 
